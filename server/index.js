@@ -52,7 +52,14 @@ app.use(
 );
 
 
-app.use("/api/inngest",serve({client:inngest,functions}))
+app.use(
+  "/api/inngest",
+  serve({
+    client: inngest,
+    functions,
+    signingKey: process.env.INNGEST_SIGNING_KEY,
+  })
+);
 
 app.get('/',(req,res)=>{
   res.send("Working")
