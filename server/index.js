@@ -55,7 +55,7 @@ app.use(
 app.use("/api/inngest",serve({client:inngest,functions}))
 
 app.get('/',(req,res)=>{
-  res.message("Workings")
+  res.send("Working")
 })
 
 
