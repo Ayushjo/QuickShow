@@ -61,9 +61,10 @@ app.use(
   })
 );
 
-app.get('/',(req,res)=>{
-  res.send("Working")
-})
+import showsRouter from "./routes/showsRoutes.js"
+
+app.use("/api/show",showsRouter)
+
 
 
 const PORT = process.env.PORT || 4100;
